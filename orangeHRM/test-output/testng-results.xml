@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="56953" started-at="2019-12-11T05:28:06Z" finished-at="2019-12-11T05:29:03Z">
+    <groups>
+      <group name="main">
+        <method signature="LoginTest.TC_1()[pri:1, instance:HRM.LoginTest@1081592]" name="TC_1" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_2()[pri:2, instance:HRM.LoginTest@1081592]" name="TC_2" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_3()[pri:3, instance:HRM.LoginTest@1081592]" name="TC_3" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_4()[pri:4, instance:HRM.LoginTest@1081592]" name="TC_4" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_5()[pri:5, instance:HRM.LoginTest@1081592]" name="TC_5" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_6()[pri:6, instance:HRM.LoginTest@1081592]" name="TC_6" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_7()[pri:7, instance:HRM.LoginTest@1081592]" name="TC_7" class="HRM.LoginTest"/>
+        <method signature="LoginTest.TC_8()[pri:8, instance:HRM.LoginTest@1081592]" name="TC_8" class="HRM.LoginTest"/>
+      </group> <!-- main -->
+    </groups>
+    <test name="Default test" duration-ms="56953" started-at="2019-12-11T05:28:06Z" finished-at="2019-12-11T05:29:03Z">
+      <class name="HRM.LoginTest">
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="3828" started-at="2019-12-11T05:28:06Z" finished-at="2019-12-11T05:28:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_1()[pri:1, instance:HRM.LoginTest@1081592]" name="TC_1" duration-ms="7827" started-at="2019-12-11T05:28:10Z" finished-at="2019-12-11T05:28:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_1 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="702" started-at="2019-12-11T05:28:18Z" finished-at="2019-12-11T05:28:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="2991" started-at="2019-12-11T05:28:18Z" finished-at="2019-12-11T05:28:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_2()[pri:2, instance:HRM.LoginTest@1081592]" name="TC_2" duration-ms="4757" started-at="2019-12-11T05:28:21Z" finished-at="2019-12-11T05:28:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_2 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="702" started-at="2019-12-11T05:28:26Z" finished-at="2019-12-11T05:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="3265" started-at="2019-12-11T05:28:27Z" finished-at="2019-12-11T05:28:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_3()[pri:3, instance:HRM.LoginTest@1081592]" name="TC_3" duration-ms="502" started-at="2019-12-11T05:28:30Z" finished-at="2019-12-11T05:28:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_3 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="856" started-at="2019-12-11T05:28:30Z" finished-at="2019-12-11T05:28:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="3051" started-at="2019-12-11T05:28:31Z" finished-at="2019-12-11T05:28:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_4()[pri:4, instance:HRM.LoginTest@1081592]" name="TC_4" duration-ms="221" started-at="2019-12-11T05:28:34Z" finished-at="2019-12-11T05:28:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_4 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="722" started-at="2019-12-11T05:28:35Z" finished-at="2019-12-11T05:28:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="3043" started-at="2019-12-11T05:28:35Z" finished-at="2019-12-11T05:28:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_5()[pri:5, instance:HRM.LoginTest@1081592]" name="TC_5" duration-ms="241" started-at="2019-12-11T05:28:38Z" finished-at="2019-12-11T05:28:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_5 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="667" started-at="2019-12-11T05:28:39Z" finished-at="2019-12-11T05:28:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="4979" started-at="2019-12-11T05:28:39Z" finished-at="2019-12-11T05:28:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_6()[pri:6, instance:HRM.LoginTest@1081592]" name="TC_6" duration-ms="232" started-at="2019-12-11T05:28:44Z" finished-at="2019-12-11T05:28:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_6 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="822" started-at="2019-12-11T05:28:45Z" finished-at="2019-12-11T05:28:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="3013" started-at="2019-12-11T05:28:45Z" finished-at="2019-12-11T05:28:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_7()[pri:7, instance:HRM.LoginTest@1081592]" name="TC_7" duration-ms="250" started-at="2019-12-11T05:28:48Z" finished-at="2019-12-11T05:28:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_7 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="715" started-at="2019-12-11T05:28:49Z" finished-at="2019-12-11T05:28:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.LoginTest@1081592]" name="b" is-config="true" duration-ms="6276" started-at="2019-12-11T05:28:49Z" finished-at="2019-12-11T05:28:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC_8()[pri:8, instance:HRM.LoginTest@1081592]" name="TC_8" duration-ms="6502" started-at="2019-12-11T05:28:56Z" finished-at="2019-12-11T05:29:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_8 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.LoginTest@1081592]" name="bclose" is-config="true" duration-ms="740" started-at="2019-12-11T05:29:02Z" finished-at="2019-12-11T05:29:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+      </class> <!-- HRM.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
