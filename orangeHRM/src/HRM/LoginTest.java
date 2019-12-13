@@ -17,80 +17,116 @@ import org.testng.annotations.Test;
 
 public class LoginTest {
 	
-	WebDriver ob;
+	WebDriver bo;
 	String bpath= "http://apps.qaplanet.in/qahrm/login.php";
 	
-	  @Test(enabled=true, priority=1,groups="main")
-	  public void TC_1() throws InterruptedException {
-		  ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Thread.sleep(4000);
-			Assert.assertEquals(ob.getTitle(), "OrangeHRM");
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-			
-	  }
-	  @Test(enabled=true, priority=2,groups="main")
-	  void TC_2() throws InterruptedException{
-			ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1234");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Thread.sleep(4000);
-			Assert.assertEquals(ob.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-			
-			
+	
+	@BeforeMethod
+	public void b() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
+		bo= new ChromeDriver();
+		bo.get(bpath);
 	}
+	
+	
+	@AfterMethod
+	public void bclose() {
+		bo.quit();
+	
+	}
+	
+	
+	
+	  //Valid & Valid
+	  @Test(enabled=true, priority=1,groups="main")
+	  public void TC1_1() throws InterruptedException {
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Thread.sleep(4000);
+			Assert.assertEquals(bo.getTitle(), "OrangeHRM");
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			  }
+	  
+	  
+	  //Invalid & Valid
+	  @Test(enabled=true, priority=2,groups="main")
+	  void  TC1_2() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1234");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Thread.sleep(4000);
+			Assert.assertEquals(bo.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);		
+	}
+	  
+	 
+	  //Valid & Invalid
 	  @Test(enabled=true, priority=3,groups="main")
-	  void TC_3() throws InterruptedException{
-			ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab123");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Assert.assertEquals(ob.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  void  TC1_3() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab123");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Assert.assertEquals(bo.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
+	  
+	  
+	  //Blank & Valid
 	  @Test(enabled=true, priority=4,groups="main")
-	  void TC_4() throws InterruptedException{
-			ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Assert.assertEquals(ob.switchTo().alert().getText(), "User Name not given!");
-			ob.switchTo().alert().accept();
+	  void  TC1_4() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Assert.assertEquals(bo.switchTo().alert().getText(), "User Name not given!");
+			bo.switchTo().alert().accept();
 	  }
+	  
+	  
+	  //Valid & Blank
 	  @Test(enabled=true, priority=5,groups="main")
-	  void TC_5() throws InterruptedException{
-			ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Assert.assertEquals(ob.switchTo().alert().getText(), "Password not given!");
-			ob.switchTo().alert().accept();
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  void  TC1_5() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Assert.assertEquals(bo.switchTo().alert().getText(), "Password not given!");
+			bo.switchTo().alert().accept();
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
+	  
+	  
+	  //Blank & Blank
 	  @Test(enabled=true, priority=6,groups="main")
-	  void TC_6() throws InterruptedException{
-			ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("");
-			ob.findElement(By.xpath("//input[@name='Submit']")).click();
-			Assert.assertEquals(ob.switchTo().alert().getText(), "User Name not given!");
-			ob.switchTo().alert().accept();
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  void  TC1_6() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+			Assert.assertEquals(bo.switchTo().alert().getText(), "User Name not given!");
+			bo.switchTo().alert().accept();
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
+	  
+	  
+	  //Invalid & Invalid
 	  @Test(enabled=true, priority=7,groups="main")
-	  void TC_7() throws InterruptedException{
-		  ob.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("ddff22");
-			ob.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("dccs22");
-			ob.findElement(By.xpath("//input[@name='clear']")).click();
-			Assert.assertEquals(ob.findElement(By.xpath("//input[@name='txtUserName']")).findElement(By.xpath("//input[@name='txtPassword']")).getText(), "");
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  void  TC1_7() throws InterruptedException{
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("ddff22");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("dccs22");
+		  bo.findElement(By.xpath("//input[@name='clear']")).click();
+			Assert.assertEquals(bo.findElement(By.xpath("//input[@name='txtUserName']")).findElement(By.xpath("//input[@name='txtPassword']")).getText(), "");
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
+	  
+	  
+	  
 	  @Test(enabled=true, priority=8,groups="main")
-	  void TC_8() throws InterruptedException{
-		  ob.findElement(By.xpath("//a[contains(text(),'OrangeHRM')]")).click();
+	  void  TC1_8() throws InterruptedException{
+		  bo.findElement(By.xpath("//a[contains(text(),'OrangeHRM')]")).click();
 			Thread.sleep(5000);
-			ob.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-		    //String windowHandle = ob.getWindowHandle();
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		    //String windowHandle = bo.getWindowHandle();
 			
-			 Set<String> s1=ob.getWindowHandles();
+			 Set<String> s1=bo.getWindowHandles();
 			 Iterator<String> i1=s1.iterator();
 			 String mainwindow =i1.next();
 			 String ChildWindow=i1.next();
@@ -98,39 +134,73 @@ public class LoginTest {
 				//  String ChildWindow=i1.next();
 				  if(!windowHandle.equalsIgnoreCase(ChildWindow))
 				  {
-					  ob.switchTo().window(ChildWindow);  */
-			 Assert.assertEquals(ob.switchTo().window(ChildWindow).getTitle(), "HR Management System | HR Management Software | OrangeHRM");	
-			 //ob.quit();
+					bo.switchTo().window(ChildWindow);  */
+			 Assert.assertEquals(bo.switchTo().window(ChildWindow).getTitle(), "HR Management System | HR Management Software | OrangeHRM");	
+			 //bo.quit();
 	  }
 	  
 	  
+	  @Test(enabled=true, priority=9,groups="main",dependsOnMethods="TC1_1")
+		 void TC1_9() throws InterruptedException{ 
+			  
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+				Thread.sleep(4000);
+				bo.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+				Thread.sleep(4000);
+				Assert.assertEquals(bo.getTitle(), "OrangeHRM - New Level of HR Management");
+				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  }
+
+	  @Test(enabled=true, priority=10,groups="main",dependsOnMethods="TC1_1")
+		 void TC1_10() throws InterruptedException{ 
+			 
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+				Thread.sleep(4000);
+				bo.findElement(By.xpath("//a[contains(text(),'Change Password')]")).click();
+				Thread.sleep(4000);
+			
+				Assert.assertEquals(bo.getTitle(),"OrangeHRM");
+				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  }
 	  
-		@BeforeMethod
-		public void b() {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA6\\Downloads\\chromedriver1.exe");
-			ob= new ChromeDriver();
-			ob.get(bpath);
-		}
-		@AfterMethod
-		public void bclose() {
-			ob.quit();
-		}
+	  
+	  @Test(enabled=true, priority=11,groups="main",dependsOnMethods="TC1_1")
+		 void TC1_11() throws InterruptedException{ 
+			 
+		  bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
+		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
+		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
+				Thread.sleep(4000);
+				
+				Assert.assertEquals(bo.findElement(By.xpath("//li[contains(text(),'Welcome qaplanet1')]")).getText(), "Welcome qaplanet1");
+				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	  }
+	  
+	  
+	
 		/*@Parameters("browser")
 		@BeforeMethod
 		public void browser(String br) {
 			if (br.equalsIgnoreCase("gg")) {
 				
-				ob=new ChromeDriver();
-				ob.get(bpath);
+				bo=new ChromeDriver();
+				bo.get(bpath);
 				
 				
 			}
 			else if(br.equalsIgnoreCase("ff"))
 			{
 
-				ob=new FirefoxDriver();
-				ob.get(bpath);
+				bo=new FirefoxDriver();
+				bo.get(bpath);
 				
 			}
 		}*/
+	  
+	  
+	  
 	}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="14600" started-at="2019-12-13T07:47:57Z" finished-at="2019-12-13T07:48:12Z">
+    <groups>
+      <group name="admin">
+        <method signature="dummyTest.TC2_10()[pri:10, instance:HRM.dummyTest@82f6ef]" name="TC2_10" class="HRM.dummyTest"/>
+      </group> <!-- admin -->
+    </groups>
+    <test name="Default test" duration-ms="14600" started-at="2019-12-13T07:47:57Z" finished-at="2019-12-13T07:48:12Z">
+      <class name="HRM.dummyTest">
+        <test-method status="PASS" signature="b()[pri:0, instance:HRM.dummyTest@82f6ef]" name="b" is-config="true" duration-ms="7047" started-at="2019-12-13T13:17:58Z" finished-at="2019-12-13T13:18:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+        <test-method status="PASS" signature="TC2_10()[pri:10, instance:HRM.dummyTest@82f6ef]" name="TC2_10" duration-ms="6932" started-at="2019-12-13T13:18:05Z" finished-at="2019-12-13T13:18:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC2_10 -->
+        <test-method status="PASS" signature="bclose()[pri:0, instance:HRM.dummyTest@82f6ef]" name="bclose" is-config="true" duration-ms="602" started-at="2019-12-13T13:18:11Z" finished-at="2019-12-13T13:18:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bclose -->
+      </class> <!-- HRM.dummyTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
