@@ -3,13 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="HRM.adminTest">
+      <class name="HRM.LoginTest">
         <methods>
-          <include name="TC2_10"/>
           <include name="bclose"/>
+          <include name="TC1_11"/>
+          <include name="TC1_8"/>
+          <include name="TC1_10"/>
+          <include name="TC1_9"/>
           <include name="b"/>
+          <include name="TC1_1"/>
         </methods>
-      </class> <!-- HRM.adminTest -->
+      </class> <!-- HRM.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test1(failed)">
+    <parameter name="browser" value="gg"/>
+    <classes>
+      <class name="HRM.LoginTest">
+        <methods>
+          <include name="TC1_6"/>
+          <include name="browser"/>
+          <include name="browser"/>
+          <include name="bclose"/>
+          <include name="bclose"/>
+          <include name="TC1_11"/>
+          <include name="TC1_8"/>
+          <include name="TC1_1"/>
+        </methods>
+      </class> <!-- HRM.LoginTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test name="Test2(failed)">
+    <parameter name="browser" value="ff"/>
+    <classes>
+      <class name="HRM.LoginTest">
+        <methods>
+          <include name="TC1_7"/>
+          <include name="browser"/>
+          <include name="browser"/>
+          <include name="bclose"/>
+          <include name="bclose"/>
+          <include name="TC1_11"/>
+          <include name="TC1_8"/>
+          <include name="TC1_10"/>
+          <include name="TC1_9"/>
+          <include name="TC1_1"/>
+        </methods>
+      </class> <!-- HRM.LoginTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

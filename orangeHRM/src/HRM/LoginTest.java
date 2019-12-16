@@ -27,6 +27,27 @@ public class LoginTest {
 		bo= new ChromeDriver();
 		bo.get(bpath);
 	}
+
+	
+	
+	    //CrossBrpwser
+	/* @Parameters("browser")
+		@BeforeMethod
+		public void browser(String br) {
+		
+		 if (br.equalsIgnoreCase("gg")) {
+				System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
+		bo= new ChromeDriver();
+		bo.get(bpath);		
+			}
+		 
+			else if(br.equalsIgnoreCase("ff")){
+				
+				System.setProperty("webdriver.gecko.driver","C:\\Users\\QA3\\Desktop\\prathamesh\\geckodriver.exe");
+				bo=new FirefoxDriver();
+				bo.get(bpath);
+					}
+	  }*/
 	
 	
 	@AfterMethod
@@ -124,19 +145,14 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//a[contains(text(),'OrangeHRM')]")).click();
 			Thread.sleep(5000);
 			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-		    //String windowHandle = bo.getWindowHandle();
-			
+		  
 			 Set<String> s1=bo.getWindowHandles();
 			 Iterator<String> i1=s1.iterator();
 			 String mainwindow =i1.next();
 			 String ChildWindow=i1.next();
-			/*while(i1.hasNext()) {
-				//  String ChildWindow=i1.next();
-				  if(!windowHandle.equalsIgnoreCase(ChildWindow))
-				  {
-					bo.switchTo().window(ChildWindow);  */
+			
 			 Assert.assertEquals(bo.switchTo().window(ChildWindow).getTitle(), "HR Management System | HR Management Software | OrangeHRM");	
-			 //bo.quit();
+			
 	  }
 	  
 	  
@@ -179,28 +195,6 @@ public class LoginTest {
 				Assert.assertEquals(bo.findElement(By.xpath("//li[contains(text(),'Welcome qaplanet1')]")).getText(), "Welcome qaplanet1");
 				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
-	  
-	  
-	
-		/*@Parameters("browser")
-		@BeforeMethod
-		public void browser(String br) {
-			if (br.equalsIgnoreCase("gg")) {
-				
-				bo=new ChromeDriver();
-				bo.get(bpath);
-				
-				
-			}
-			else if(br.equalsIgnoreCase("ff"))
-			{
-
-				bo=new FirefoxDriver();
-				bo.get(bpath);
-				
-			}
-		}*/
-	  
 	  
 	  
 	}
