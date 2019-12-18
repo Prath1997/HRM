@@ -22,6 +22,8 @@ public class adminTest {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
 		bo= new ChromeDriver();
 		bo.get(bpath);
+		bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
+		  
 		 bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
 		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
@@ -34,21 +36,25 @@ public class adminTest {
 		@BeforeMethod
 		public void browser(String br) throws InterruptedException {
 		
-		 if (br.equalsIgnoreCase("gg")) {
+		 if (br.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
 		bo= new ChromeDriver();
 		bo.get(bpath);	
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
+	  
 		 bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
 		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Thread.sleep(2000);	
 			}
 		 
-			else if(br.equalsIgnoreCase("ff")){
+			else if(br.equalsIgnoreCase("firefox")){
 				
 				System.setProperty("webdriver.gecko.driver","C:\\Users\\QA3\\Desktop\\prathamesh\\geckodriver.exe");
 				bo=new FirefoxDriver();
 				bo.get(bpath);
+					bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
+	  
 				 bo.findElement(By.xpath("//input[@name='txtUserName']")).sendKeys("qaplanet1");
 		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab1");
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
@@ -79,8 +85,7 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
-	  
+
 	  }
 	  
 //admin=company info=location
@@ -98,7 +103,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  
 	  }
   
@@ -117,7 +121,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  
 	  }
 
@@ -136,7 +139,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  
 	  }
   
@@ -155,7 +157,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  
 	  }
 //admin=job=job specification
@@ -173,7 +174,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  
 	  }
   
@@ -193,7 +193,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
   
   
@@ -212,7 +211,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
   
 //admin=job=EEO jobs
@@ -230,7 +228,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
   
   
@@ -249,7 +246,6 @@ public class adminTest {
 			Thread.sleep(2000);
 		Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 		
-		bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 		  }
 
 //admin = qualification= licenses
@@ -267,7 +263,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
   
   
@@ -286,7 +281,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
 
   
@@ -305,7 +299,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
 
 //admin = memberships = memberships type
@@ -323,7 +316,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
 
 //admin = memberships = membership
@@ -341,7 +333,6 @@ public class adminTest {
 		Thread.sleep(2000);
 	Assert.assertEquals(bo.getTitle(), "OrangeHRM");
 	
-	bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
 	  }
   
   

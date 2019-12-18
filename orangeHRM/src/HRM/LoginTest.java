@@ -26,6 +26,7 @@ public class LoginTest {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
 		bo= new ChromeDriver();
 		bo.get(bpath);
+		bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	}
 
 	
@@ -35,17 +36,21 @@ public class LoginTest {
 		@BeforeMethod
 		public void browser(String br) {
 		
-		 if (br.equalsIgnoreCase("gg")) {
+		 if (br.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
 		bo= new ChromeDriver();
-		bo.get(bpath);		
+		bo.get(bpath);
+			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
+	  		
 			}
 		 
-			else if(br.equalsIgnoreCase("ff")){
+			else if(br.equalsIgnoreCase("firefox")){
 				
 				System.setProperty("webdriver.gecko.driver","C:\\Users\\QA3\\Desktop\\prathamesh\\geckodriver.exe");
 				bo=new FirefoxDriver();
 				bo.get(bpath);
+					bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS); 
+	  
 					}
 	  }*/
 	
@@ -66,7 +71,7 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Thread.sleep(4000);
 			Assert.assertEquals(bo.getTitle(), "OrangeHRM");
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		
 			  }
 	  
 	  
@@ -78,7 +83,7 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Thread.sleep(4000);
 			Assert.assertEquals(bo.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);		
+				
 	}
 	  
 	 
@@ -89,7 +94,6 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("lab123");
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Assert.assertEquals(bo.findElement(By.xpath("//font[contains(text(),'Invalid Login')]")).getText(), "Invalid Login");
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
@@ -112,7 +116,6 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Assert.assertEquals(bo.switchTo().alert().getText(), "Password not given!");
 			bo.switchTo().alert().accept();
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
@@ -124,7 +127,6 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='Submit']")).click();
 			Assert.assertEquals(bo.switchTo().alert().getText(), "User Name not given!");
 			bo.switchTo().alert().accept();
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
@@ -135,7 +137,6 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//input[@name='txtPassword']")).sendKeys("dccs22");
 		  bo.findElement(By.xpath("//input[@name='clear']")).click();
 			Assert.assertEquals(bo.findElement(By.xpath("//input[@name='txtUserName']")).findElement(By.xpath("//input[@name='txtPassword']")).getText(), "");
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
@@ -166,7 +167,6 @@ public class LoginTest {
 				bo.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
 				Thread.sleep(4000);
 				Assert.assertEquals(bo.getTitle(), "OrangeHRM - New Level of HR Management");
-				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 
 	  @Test(enabled=true, priority=10,groups="main",dependsOnMethods="TC1_1")
@@ -180,7 +180,6 @@ public class LoginTest {
 				Thread.sleep(4000);
 			
 				Assert.assertEquals(bo.getTitle(),"OrangeHRM");
-				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
@@ -193,7 +192,6 @@ public class LoginTest {
 				Thread.sleep(4000);
 				
 				Assert.assertEquals(bo.findElement(By.xpath("//li[contains(text(),'Welcome qaplanet1')]")).getText(), "Welcome qaplanet1");
-				bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	  }
 	  
 	  
