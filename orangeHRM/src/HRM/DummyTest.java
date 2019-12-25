@@ -1,5 +1,7 @@
 package HRM;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +23,8 @@ public class DummyTest {
 		 if (br.equalsIgnoreCase("gg")) {
 				System.setProperty("webdriver.chrome.driver", "C:\\Users\\QA3\\Desktop\\prathamesh\\chromedriver.exe");
 		bo= new ChromeDriver();
-		bo.get(bpath);		
+		bo.get(bpath);	
+		bo.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 			}
 		 
 			else if(br.equalsIgnoreCase("ff")){
@@ -29,6 +32,7 @@ public class DummyTest {
 				System.setProperty("webdriver.gecko.driver","C:\\Users\\QA3\\Desktop\\prathamesh\\geckodriver.exe");
 				bo=new FirefoxDriver();
 				bo.get(bpath);
+				bo.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 					}
 	  }
 	 
