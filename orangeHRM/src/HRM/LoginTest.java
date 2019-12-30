@@ -146,15 +146,10 @@ public class LoginTest {
 		  bo.findElement(By.xpath("//a[contains(text(),'OrangeHRM')]")).click();
 			Thread.sleep(5000);
 			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-		  
-			 Set<String> s1=bo.getWindowHandles();
-			 Iterator<String> i1=s1.iterator();
-			 String mainwindow =i1.next();
-			 String ChildWindow=i1.next();
-			
+		  	 String win=bo.getWindowHandle();
+	 		 bo.switchTo().window(win);
 			 Assert.assertEquals(bo.switchTo().window(ChildWindow).getTitle(), "HR Management System | HR Management Software | OrangeHRM");	
-			
-	  }
+		  }
 	  
 	  
 	  @Test(enabled=true, priority=9,groups="main",dependsOnMethods="TC1_1")
