@@ -145,7 +145,6 @@ public class LoginTest {
 	  void  TC1_8() throws InterruptedException{
 		  bo.findElement(By.xpath("//a[contains(text(),'OrangeHRM')]")).click();
 			Thread.sleep(5000);
-			bo.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		  	 String win=bo.getWindowHandle();
 	 		 bo.switchTo().window(win);
 			 Assert.assertEquals(bo.switchTo().window(ChildWindow).getTitle(), "HR Management System | HR Management Software | OrangeHRM");	
